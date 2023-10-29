@@ -122,3 +122,19 @@ func (a D128) Cmp(b D128) Compare {
 	}
 	return Equal
 }
+
+func (a D128) Float32() float32 {
+	f := float32(a.numerator) / float32(a.denominator)
+	if a.sign == Negative {
+		f = -f
+	}
+	return f
+}
+
+func (a D128) Float64() float64 {
+	f := float64(a.numerator) / float64(a.denominator)
+	if a.sign == Negative {
+		f = -f
+	}
+	return f
+}
