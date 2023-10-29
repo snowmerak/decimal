@@ -1,0 +1,3 @@
+module github.com/snowmerak/decimal
+
+go 1.21.3
