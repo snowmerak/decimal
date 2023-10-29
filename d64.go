@@ -9,6 +9,9 @@ type D64 struct {
 }
 
 func New64(sign Sign, numerator, denominator uint32) D64 {
+	gcd := Gcd32(numerator, denominator)
+	numerator /= gcd
+	denominator /= gcd
 	return D64{
 		sign:        sign,
 		numerator:   numerator,

@@ -9,6 +9,9 @@ type D128 struct {
 }
 
 func New128(sign Sign, numerator, denominator uint64) D128 {
+	gcd := Gcd64(numerator, denominator)
+	numerator /= gcd
+	denominator /= gcd
 	return D128{
 		sign:        sign,
 		numerator:   numerator,
